@@ -170,7 +170,7 @@ const currentYear = new Date().getFullYear();
                 :href="`https://wa.me/5492216059132?text=Hola%20Cherry!%20Quiero%20consultar%20por%20el%20servicio:%20${encodeURIComponent(service.title)}`"
               >
                 Consultar
-              </a>          ç
+              </a>          
             </div>
         </div>
       </section>
