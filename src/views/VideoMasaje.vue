@@ -43,7 +43,7 @@ Email: ${email}%0A
         <!-- Video -->
         <div class="video-box">
           <video 
-            src="/assets/ReelCherry.mp4" 
+            src="/assets/PreviewVideo.mp4" 
             class="video-preview" 
             controls 
             preload="metadata"

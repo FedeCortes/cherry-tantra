@@ -164,8 +164,14 @@ const currentYear = new Date().getFullYear();
             <ul>
               <li v-for="(feature, index) in service.features" :key="index">{{ feature }}</li>
             </ul>
-            <button class="btn">Consultar</button>
-          </div>
+              <a 
+                class="btn"
+                target="_blank"
+                :href="`https://wa.me/5492216059132?text=Hola%20Cherry!%20Quiero%20consultar%20por%20el%20servicio:%20${encodeURIComponent(service.title)}`"
+              >
+                Consultar
+              </a>          ç
+            </div>
         </div>
       </section>
 
