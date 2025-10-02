@@ -69,6 +69,13 @@ const services = ref([
     title: 'Tarot Evolutivo', 
     description: 'Sesiones de tarot con mirada evolutiva y de autoconocimiento.', 
     features: ['Perspectiva evolutiva', 'Autoconocimiento'] 
+  },
+  { 
+    id: 10, 
+    icon: '💞', 
+    title: 'Sesiones a Parejas de Masaje y Conexión Tántrica', 
+    description: 'Atención especial a parejas, integrando técnicas de masaje y conexión tántrica.', 
+    features: ['3 horas de duración', 'Trabajo conjunto en pareja', 'Experiencia profunda y compartida'] 
   }
 ]);
 
@@ -301,7 +308,7 @@ a:hover { color: #b93c64; cursor: pointer; }
 .services-grid {
   display: grid;
   gap: 1.5rem;
-  grid-template-columns: repeat(3, 1fr); /* Desktop: 3 columnas */
+  grid-template-columns: repeat(5, 1fr); /* Desktop: 3 columnas */
 }
 @media(max-width:1024px){
   .services-grid { grid-template-columns: repeat(2, 1fr); }
