@@ -3,27 +3,21 @@ import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 
 const router = useRouter()
-const formData = ref({ name: '', email: '', phone: '' })
+const formData = ref({ name: '', email: ''})
 
-const handlePayment = async () => {
-  try {
-    const res = await fetch('http://localhost:3000/create-order', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(formData.value),
-    })
+// 👉 función para enviar datos a WhatsApp
+const sendWhatsApp = () => {
+  const { name, email } = formData.value
 
-    const { init_point } = await res.json()
-    console.log('Link de pago:', init_point)
+  // mensaje con saltos de línea (%0A)
+  const message = `Hola! Quiero el curso Masaje Tántrico Yoni.%0A
+Nombre: ${name}%0A
+Email: ${email}%0A 
+  `
 
-    // si lo querés redirigir:
-    if (init_point) window.location.href = init_point
-  } catch (err) {
-    console.error(err)
-    alert('Error al iniciar el pago')
-  }
+  const url = `https://wa.me/5492216059132?text=${message}`
+  window.open(url, '_blank')
 }
-
 </script>
 
 <template>
@@ -47,18 +41,16 @@ const handlePayment = async () => {
     <section class="video-content">
       <div class="video-grid">
         <!-- Video -->
-       <!-- Video -->
-      <div class="video-box">
-        <video 
-          src="../assets/ReelCherry.mp4" 
-          class="video-preview" 
-          controls 
-          preload="metadata"
-        >
-          Tu navegador no soporta la reproducción de video.
-        </video>
-      </div>
-
+        <div class="video-box">
+          <video 
+            src="/assets/ReelCherry.mp4" 
+            class="video-preview" 
+            controls 
+            preload="metadata"
+          >
+            Tu navegador no soporta la reproducción de video.
+          </video>
+        </div>
 
         <!-- Info -->
         <div class="video-info">
@@ -82,31 +74,51 @@ const handlePayment = async () => {
       <!-- Formulario -->
       <div class="purchase-box">
         <h2>Obtén acceso inmediato</h2>
-        <form @submit.prevent="handlePayment">
+        <form @submit.prevent="sendWhatsApp">
           <input v-model="formData.name" type="text" placeholder="Nombre" required>
           <input v-model="formData.email" type="email" placeholder="Email" required>
-          <input v-model="formData.phone" type="tel" placeholder="WhatsApp" required>
           <button type="submit" class="buy-btn">Comprar ahora - $45.000</button>
         </form>
-        <p class="secure">🔒 Pago seguro con MercadoPago</p>
+        <p class="secure">🔒 Pago seguro vía WhatsApp</p>
       </div>
     </section>
 
-    <!-- WhatsApp flotante -->
-    <a 
-      href="https://wa.me/5492216059132?text=Hola!%20Quiero%20el%20curso%20Masaje%20Tántrico%20Yoni" 
-      target="_blank" 
-      class="whatsapp-float"
-    >
-      💬
+   <!-- WhatsApp -->
+    <a class="whatsapp" target="_blank"
+      href="https://wa.me/5492216059132?text=Hola%20Cherry!%20Me%20interesa%20conocer%20más%20sobre%20tus%20servicios">
+      <img src="https://img.icons8.com/color/48/000000/whatsapp.png" alt="WhatsApp">
     </a>
   </div>
 </template>
 
 <style scoped>
 .video-page { padding-top: 80px; }
+/* WHATSAPP */
+.whatsapp { 
+  position: fixed; 
+  bottom: 20px; 
+  right: 20px; 
+  background: #25d366; /* Verde oficial de WhatsApp */
+  border-radius: 50%; 
+  width: 60px; 
+  height: 60px; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  box-shadow: 0 6px 15px rgba(0,0,0,0.25); 
+  transition: transform .3s ease, box-shadow .3s ease; 
+  z-index: 1000;
+}
+.whatsapp img { 
+  width: 32px; 
+  height: 32px; 
+}
+.whatsapp:hover { 
+  transform: scale(1.1); 
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3); 
+}
 
-
+/* VIDEO */
 .video-preview {
   max-height: 500px;
   width: 100%;
@@ -114,6 +126,7 @@ const handlePayment = async () => {
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
+/* HEADER */
 .video-header {
   position: fixed;
   top: 0;
@@ -128,7 +141,6 @@ const handlePayment = async () => {
   box-shadow: var(--shadow-light);
   z-index: 1000;
 }
-
 .logo { display: flex; align-items: center; gap: 0.75rem; }
 .logo-circle {
   width: 50px;
@@ -146,7 +158,6 @@ const handlePayment = async () => {
   font-size: 1.5rem;
   font-family: var(--font-primary);
 }
-
 .back-btn {
   background: none;
   border: 2px solid var(--color-primary);
@@ -158,6 +169,7 @@ const handlePayment = async () => {
   transition: all 0.3s;
 }
 
+/* HERO */
 .video-hero {
   background: linear-gradient(135deg, #ffd6e8, #e4b4a2);
   padding: 6rem 5% 4rem;
@@ -173,52 +185,23 @@ const handlePayment = async () => {
   font-weight: 500;
 }
 
+/* CONTENT */
 .video-content {
   max-width: 1200px;
   margin: 0 auto;
   padding: 4rem 5%;
 }
-
 .video-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 3rem;
   margin-bottom: 4rem;
 }
-
-.video-placeholder {
-  background: linear-gradient(135deg, #667eea, #764ba2);
-  border-radius: 20px;
-  aspect-ratio: 16/9;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  cursor: pointer;
-}
-
-.play-btn {
-  width: 70px;
-  height: 70px;
-  background: rgba(255,255,255,0.3);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  transition: all 0.3s;
-}
-.play-btn:hover {
-  background: rgba(255,255,255,0.5);
-  transform: scale(1.1);
-}
-
 .video-info h2 { margin-bottom: 1.5rem; }
 .video-info ul {
   list-style: none;
   margin-bottom: 2rem;
+  padding: 0;
 }
 .video-info li {
   padding: 0.8rem 0;
@@ -226,6 +209,7 @@ const handlePayment = async () => {
   font-size: 1.1rem;
 }
 
+/* PRICES */
 .price-box {
   background: #128c7e;
   padding: 1.5rem;
@@ -255,6 +239,7 @@ const handlePayment = async () => {
   font-weight: 700;
 }
 
+/* PURCHASE BOX */
 .purchase-box {
   background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
   padding: 3rem;
@@ -300,29 +285,13 @@ const handlePayment = async () => {
   font-size: 0.8rem;
   margin-top: 1rem;
   opacity: 0.9;
+  border-radius: 5px;
+  padding: 0.3rem 0.5rem;
+  display: inline-block;
 }
 
-.whatsapp-float {
-  position: fixed;
-  bottom: 25px;
-  right: 25px;
-  width: 60px;
-  height: 60px;
-  background: linear-gradient(135deg, #25d366, #128c7e);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.8rem;
-  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
-  text-decoration: none;
-  z-index: 999;
-  transition: all 0.3s;
-}
-.whatsapp-float:hover {
-  transform: scale(1.1);
-}
 
+/* RESPONSIVE */
 @media (max-width: 768px) {
   .video-grid {
     grid-template-columns: 1fr;
@@ -331,5 +300,3 @@ const handlePayment = async () => {
   .purchase-box { padding: 2rem 1.5rem; }
 }
 </style>
-
-
