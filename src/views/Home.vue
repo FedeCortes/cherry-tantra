@@ -252,12 +252,11 @@ const currentYear = new Date().getFullYear();
       </section>
     </main>
 
-    <!-- FOOTER -->
     <footer class="footer">
-      <p>&copy; {{ currentYear }} Cherry - Diosa Tántrica. Todos los derechos reservados.</p>
+      <p>&copy; {{ new Date().getFullYear() }} Cherry - Diosa Tántrica. Todos los derechos reservados.</p>
+      <p class="footer-credit">Sitio creado por <a href="https://presence.com.ar/" target="_blank" rel="noopener" class="presence-link">Presence</a></p>
     </footer>
 
-    <!-- WhatsApp -->
     <a class="whatsapp" target="_blank"
       href="https://wa.me/5492216059132?text=Hola%20Cherry!%20Me%20interesa%20conocer%20más%20sobre%20tus%20servicios">
       <img src="https://img.icons8.com/color/48/000000/whatsapp.png" alt="WhatsApp">
@@ -265,6 +264,13 @@ const currentYear = new Date().getFullYear();
   </div>
 </template>
 <style scoped>
+.footer { text-align:center; padding:1.5rem; background:#5a2f2f; color:#fff; font-size:0.9rem; }
+
+.footer-credit {
+  font-size: 0.85rem;
+  margin-top: 0.8rem;
+  color: rgba(255,255,255,0.5);
+}
 /* === GLOBAL === */
 body {
   margin: 0;
@@ -378,9 +384,6 @@ a:hover { color: #b93c64; cursor: pointer; }
 .social-icons { display: flex; justify-content: center; gap: 1rem; margin-top: 0.5rem; }
 .social-icons img { width: 36px; height: 36px; transition: transform .3s; }
 .social-icons img:hover { transform: scale(1.1); }
-
-/* FOOTER */
-.footer { text-align:center; padding:1.5rem; background:#5a2f2f; color:#fff; font-size:0.9rem; }
 
 /* WHATSAPP */
 .whatsapp { 

@@ -207,6 +207,8 @@ Email: ${email}%0A
           </div>
         </div>
       </div>
+       <!-- Footer -->
+  
     </section>
 
    <!-- WhatsApp -->
@@ -214,10 +216,27 @@ Email: ${email}%0A
       href="https://wa.me/5492216059132?text=Hola%20Cherry!%20Me%20interesa%20conocer%20más%20sobre%20tus%20servicios">
       <img src="https://img.icons8.com/color/48/000000/whatsapp.png" alt="WhatsApp">
     </a>
+    <footer class="footer">
+      <p>&copy; {{ new Date().getFullYear() }} Cherry - Diosa Tántrica. Todos los derechos reservados.</p>
+      <p class="footer-credit">Sitio creado por <a href="https://presence.com.ar/" target="_blank" rel="noopener" class="presence-link">Presence</a></p>
+    </footer>
+
   </div>
+    
 </template>
 
 <style scoped>
+.footer { text-align:center; padding:1.5rem; background:#5a2f2f; color:#fff; font-size:0.9rem; }
+
+.footer-credit {
+  font-size: 0.85rem;
+  margin-top: 0.8rem;
+  color: rgba(255,255,255,0.5);
+}
+
+a { text-decoration: none; color: #e75480; }
+a:hover { color: #b93c64; cursor: pointer; }
+
 .video-page { 
   padding-top: 80px;
   background: linear-gradient(180deg, #fff 0%, #fef5f8 100%);
