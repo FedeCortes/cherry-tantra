@@ -80,9 +80,27 @@ const services = ref([
 ]);
 
 const events = ref([
-  { id: 1, date: { day: '10', month: 'OCT' }, title: 'Descaradas.ok', location: 'Youtube', description: '' },
-  { id: 2, date: { day: '11', month: 'OCT' }, title: 'Fiesta tantrika', location: 'CABA', description: '' },
-  { id: 3, date: { day: '12', month: 'OCT' }, title: 'Taller módulo de formación de tantra y tao sexual', location: 'La Plata', description: 'De 16:00 a 20:00' }
+  {
+    id: 1,
+    date: { day: '22', month: 'OCT' },
+    title: 'Entrevista en el programa Estilo Mujer',
+    location: 'Canal Somos La Plata',
+    description: '14:15 hs'
+  },
+  {
+    id: 2,
+    date: { day: '22', month: 'OCT' },
+    title: 'Programa Ahora Caigo',
+    location: 'Canal 13',
+    description: '18:15 hs — participo todo el programa'
+  },
+  {
+    id: 3,
+    date: { day: '24', month: 'OCT' },
+    title: 'Stream – Programa A Contramano',
+    location: 'www.realpolitik.fm',
+    description: '11:00 hs — entrevista que me van a hacer'
+  }
 ]);
 
 const photos = ref([
@@ -319,7 +337,6 @@ a:hover { color: #b93c64; cursor: pointer; }
 
 .card { 
   background:#fff; 
-  padding:1.5rem; 
   border-radius:16px; 
   box-shadow:0 4px 12px rgba(0,0,0,.06); 
   text-align:center; 
@@ -328,7 +345,7 @@ a:hover { color: #b93c64; cursor: pointer; }
   display:flex;
   flex-direction:column;
   justify-content:flex-start;
-  min-height: 260px;
+  min-height: 220px;
 }
 .card .btn { margin-top:auto; align-self:center; }
 .card:hover { transform: translateY(-6px); box-shadow:0 8px 20px rgba(0,0,0,.12); }
@@ -370,16 +387,17 @@ a:hover { color: #b93c64; cursor: pointer; }
   position: fixed; 
   bottom: 20px; 
   right: 20px; 
-  background: #25d366;
+  background: linear-gradient(135deg, #25d366, #128C7E);
   border-radius: 50%; 
   width: 60px; 
   height: 60px; 
   display: flex; 
   align-items: center; 
   justify-content: center; 
-  box-shadow: 0 6px 15px rgba(0,0,0,0.25); 
-  transition: transform .3s ease, box-shadow .3s ease; 
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4); 
+  transition: all .3s ease; 
   z-index: 1000;
+  animation: pulse 2s infinite;
 }
 .whatsapp img { width: 32px; height: 32px; }
 .whatsapp:hover { transform: scale(1.08); box-shadow: 0 8px 20px rgba(0,0,0,0.3); }
@@ -402,5 +420,6 @@ a:hover { color: #b93c64; cursor: pointer; }
   .hero h2 { font-size:1.1rem; }
   .contact-wrapper { flex-direction: column; text-align: center; }
 }
+
 </style>
 
