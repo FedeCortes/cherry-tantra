@@ -81,25 +81,46 @@ const services = ref([
 
 const events = ref([
   {
-    id: 1,
-    date: { day: '22', month: 'OCT' },
-    title: 'Entrevista en el programa Estilo Mujer',
-    location: 'Canal Somos La Plata',
-    description: '14:15 hs'
-  },
-  {
     id: 2,
-    date: { day: '22', month: 'OCT' },
-    title: 'Programa Ahora Caigo',
-    location: 'Canal 13',
-    description: '18:15 hs — participo todo el programa'
+    date: { day: '10', month: 'DIC' },
+    title: 'Frecuencia 69',
+    location: 'Radio Cielo 103.5',
+    description: 'Programa con Pato Galván'
   },
   {
     id: 3,
-    date: { day: '24', month: 'OCT' },
-    title: 'Stream – Programa A Contramano',
-    location: 'www.realpolitik.fm',
-    description: '11:00 hs — entrevista que me van a hacer'
+    date: { day: '12', month: 'DIC' },
+    title: 'Descaradas Stream',
+    location: 'Online',
+    description: '20:30 a 22 hs'
+  },
+  {
+    id: 4,
+    date: { day: '12', month: 'DIC' },
+    title: 'Sadoplace',
+    location: 'CABA',
+    description: 'Show en vivo'
+  },
+  {
+    id: 5,
+    date: { day: '14', month: 'DIC' },
+    title: 'Retorno al Alma',
+    location: 'CABA',
+    description: 'Evento de alto impacto'
+  },
+  {
+    id: 6,
+    date: { day: '19', month: 'DIC' },
+    title: 'Descaradas Fashion Night',
+    location: 'CABA',
+    description: ''
+  },
+  {
+    id: 7,
+    date: { day: '28', month: 'DIC' },
+    title: 'Encuentro tántrico',
+    location: 'La Plata',
+    description: 'En la Casa 24'
   }
 ]);
 
