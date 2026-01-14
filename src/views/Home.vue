@@ -81,48 +81,35 @@ const services = ref([
 
 const events = ref([
   {
+    id: 1,
+    date: { day: '17', month: 'ENE' },
+    title: 'Taller de BDSM Tántrico + Jam',
+    location: 'Rosario',
+    description: 'Taller de BDSM tántrico + jam de BDSM y shibari',
+  },
+  {
     id: 2,
-    date: { day: '10', month: 'DIC' },
-    title: 'Frecuencia 69',
-    location: 'Radio Cielo 103.5',
-    description: 'Programa con Pato Galván'
+    date: { day: '18', month: 'ENE' },
+    title: 'Taller de Conexión Tántrica',
+    location: 'Rosario',
+    description: 'Tántrica y masaje Yin Yang',
   },
   {
     id: 3,
-    date: { day: '12', month: 'DIC' },
-    title: 'Descaradas Stream',
-    location: 'Online',
-    description: '20:30 a 22 hs'
+    date: { day: '22', month: 'ENE' },
+    title: 'Tántra Chamánico',
+    location: 'Erotic Pink, Palermo, Bs. As.',
+    description: 'Encuentro de tántra chamánico',
   },
   {
     id: 4,
-    date: { day: '12', month: 'DIC' },
-    title: 'Sadoplace',
-    location: 'CABA',
-    description: 'Show en vivo'
-  },
-  {
-    id: 5,
-    date: { day: '14', month: 'DIC' },
-    title: 'Retorno al Alma',
-    location: 'CABA',
-    description: 'Evento de alto impacto'
-  },
-  {
-    id: 6,
-    date: { day: '19', month: 'DIC' },
-    title: 'Descaradas Fashion Night',
-    location: 'CABA',
-    description: ''
-  },
-  {
-    id: 7,
-    date: { day: '28', month: 'DIC' },
-    title: 'Encuentro tántrico',
+    date: { day: '25', month: 'ENE' },
+    title: 'Tantra Day',
     location: 'La Plata',
-    description: 'En la Casa 24'
-  }
-]);
+    description: 'Evento al aire libre – Casa 24',
+  },
+])
+
 
 const photos = ref([
   { id: 1, url: '/assets/photo1.jpeg', title: 'Shibari' },
