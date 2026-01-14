@@ -258,7 +258,7 @@ const currentYear = new Date().getFullYear();
             <p><b>Online:</b> Disponible mundial</p>
             <h3 style="margin-top: 3rem;">📱 Redes Sociales</h3>
             <div class="social-icons">
-              <a href="https://www.instagram.com/diosatantrica.cherry/" target="_blank">
+              <a href="https://www.instagram.com/diosatantricacherry/" target="_blank">
                 <img src="https://img.icons8.com/color/48/000000/instagram-new.png" alt="Instagram"/>
               </a>
               <a href="https://wa.me/5492216059132" target="_blank">
